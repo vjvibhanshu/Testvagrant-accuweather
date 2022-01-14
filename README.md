@@ -22,9 +22,9 @@ Follow [instructions on the node.js site](https://nodejs.org/en/download/) to in
 * Execute command  `npm install` to install the cypress and other project dependecies
 * Execute command `npm run test` to run the test cases in headless mode
   Chrome and Firefox browsers can be run for headed mode with below commands:
-
-> test_chrome_headed
-> test_firefox_headed
-
+```
+test_chrome_headed
+test_firefox_headed
+```
 #EOF README
 
