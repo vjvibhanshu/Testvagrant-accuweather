@@ -13,6 +13,9 @@ class HomePageElement{
     cookieBanner(){
         return cy.get(ORprop.HomePage.cookiebtn_css);
     }
+    temprature(){
+        return cy.get(ORprop.WeatherPage.temp_css);
+    }
 }
 const HomePageEl = new  HomePageElement();
 export default HomePageEl;

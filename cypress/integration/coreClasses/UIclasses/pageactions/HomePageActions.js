@@ -1,17 +1,19 @@
 import HomePageEl from "../pageelements/HomePageElements";
+import userData from "../../../../fixtures/testData.json"
 class HomePageActions{
-    nevigatetoURL(){
-        cy.visit("http://www.accuweather.com/",{ headers: { "Accept-Encoding": "gzip, deflate, br","Connection":"keep-alive"}});
-    }
-    searchForCity(cityname){
-        
+
+    nevigateAndSearchForCity(cityname){
+        cy.visit(userData.ui.url,{ headers: { "Accept-Encoding": "gzip, deflate, br","Connection":"keep-alive"}});    
         HomePageEl.cookieBanner().click();
-        cy.wait(3000);
+        cy.wait(1000);
         HomePageEl.searchbox().type(cityname);
         HomePageEl.suggestionList().eq(0).click();
-        //HomePageEl.suggestionList().parent();
+
+    }
+    getTemprature(){
+        return HomePageEl.temprature();
     }
 
 }
-const homePage = new  HomePageActions();
-export default homePage;
+const webPage = new  HomePageActions();
+export default webPage;

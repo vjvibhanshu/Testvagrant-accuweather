@@ -1,8 +1,9 @@
+import userData from "../../../fixtures/testData.json"
 class ApiRequest{
     fetchResponse(){
         return cy.request({
             'method':'GET',
-            'url':'api.openweathermap.org/data/2.5/weather?q=delhi&appid=7fe67bf08c80ded756e598d6f8fedaea&units=metric',
+            'url':userData.api.endpoint+'q='+userData.api.cityname+'&appid=7fe67bf08c80ded756e598d6f8fedaea&units='+userData.api.units,
             'headers':{
                 'content-type': 'application/json',
                 'Accept-Encoding' : 'gzip, deflate, br',

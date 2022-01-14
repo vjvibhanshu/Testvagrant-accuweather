@@ -1,15 +1,21 @@
-import homePage from "../coreClasses/UIclasses/pageactions/HomePageActions"
-import weatherPage from "../coreClasses/UIclasses/pageactions/WeatherPageActios"
+import webPage from "../coreClasses/UIclasses/pageactions/HomePageActions"
 import apiRequest from "../coreClasses/APIclasses/requestGet"
 
-describe("trial run",()=>{
-    it("First test case",()=>{
+describe("Test suit for Comparator",()=>{
+
+    before("Initializing Test data from fixture",()=>{
+        cy.fixture('testData').then(tdata =>{
+            globalThis.testData = tdata;
+        })
+    })
+
+
+    it("Comparator testcase",()=>{
         apiRequest.fetchResponse()
         .then(resp => {
             let apiTemp = Number.parseFloat(JSON.stringify(resp.body.main.temp));
-            homePage.nevigatetoURL();
-            homePage.searchForCity("Delhi");
-            weatherPage.getTemprature().then( $el =>{
+            webPage.nevigateAndSearchForCity(testData.ui.cityname);
+            webPage.getTemprature().then( $el =>{
                 let uiTemp =Number.parseFloat($el.text());
                 expect(apiTemp).to.eq(uiTemp);
             });
