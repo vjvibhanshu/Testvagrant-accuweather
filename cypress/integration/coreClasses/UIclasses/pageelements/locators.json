@@ -1,0 +1,11 @@
+{
+    "HomePage":{
+        "searchbox_css" :"div.searchbar-content > form > input",
+        "searchoptions_css" : "body > div > div.page-hero.hero-1.content-module > div.featured-search-bar.featured-search > div.searchbar-content > div > div > div.displayed-item > svg",
+        "searchlist_css": "div.search-results > div.results-container>div",
+        "cookiebtn_css" : "#privacy-policy-banner > div > div"
+    },
+    "WeatherPage":{
+        "temp_css":"div.cur-con-weather-card__panel > div > div > div.temp"
+    }
+}
