@@ -1,0 +1,14 @@
+{
+  "name": "testvagrant",
+  "version": "1.0.0",
+  "description": "project for testvagrant",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cypress run --spec ./cypress/integration/Testcases/* --browser chrome --headed"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.2.1"
+  }
+}
