@@ -1,5 +1,10 @@
 import userData from "../../../fixtures/testData.json"
+
 class ApiRequest{
+    /**
+     * fetchResponse will fire the API GET request on the basis of userdata
+     * @returns Api Response
+     */
     fetchResponse(){
         return cy.request({
             'method':'GET',
@@ -12,5 +17,9 @@ class ApiRequest{
         });
     }
 }
+/**
+ * Instance of the API class which is used to execute the API request
+ * Response needs to be handled by the called instance
+ */
 const apiRequest = new ApiRequest;
 export default apiRequest;

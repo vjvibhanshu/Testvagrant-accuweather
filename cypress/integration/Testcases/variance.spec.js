@@ -1,7 +1,7 @@
 import webPage from "../coreClasses/UIclasses/pageactions/HomePageActions"
 import apiRequest from "../coreClasses/APIclasses/requestGet"
 
-describe("Test suit for Comparator",()=>{
+describe("Test suit for Variance",()=>{
 
     before("Initializing Test data from fixture",()=>{
         cy.fixture('testData').then(tdata =>{
@@ -10,13 +10,14 @@ describe("Test suit for Comparator",()=>{
     })
 
 
-    it("Comparator testcase",()=>{
-        apiRequest.fetchResponse().then(resp => {
+    it("Variance testcase",()=>{
+        apiRequest.fetchResponse()
+        .then(resp => {
             let apiTemp = Number.parseFloat(JSON.stringify(resp.body.main.temp));
             webPage.nevigateAndSearchForCity(testData.ui.cityname);
             webPage.getTemprature().then( $el =>{
                 let uiTemp =Number.parseFloat($el.text());
-                expect(apiTemp).to.eq(uiTemp);
+                expect(Math.abs(apiTemp-uiTemp)).to.be.within(testData.variance.range_start,testData.variance.range_end)
             });
         })
     })
