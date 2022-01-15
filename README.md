@@ -31,7 +31,13 @@ test_firefox_headed
 
 * After execution of test cases execute command `npm run openReports` It will start the server and open report on the webbrowser, to quit press `ctrl + c`
 * Please find below the snip of reporting:
+
+  <img src="https://github.com/vjvibhanshu/Testvagrant-accuweather/blob/main/resource_readme/homesnip.png" width="70%" height="70%"/>
+  
 * Videos also added for each test case in the report:
+
+  <img src="https://github.com/vjvibhanshu/Testvagrant-accuweather/blob/main/resource_readme/videosnip.png" width="70%" height="70%"/>
+
 
 #EOF README
 
