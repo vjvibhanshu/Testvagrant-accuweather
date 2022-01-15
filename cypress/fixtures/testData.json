@@ -1,3 +1,17 @@
-{
-  "url" :"https://www.accuweather.com/"
+{  
+  "api":{
+    "endpoint":"api.openweathermap.org/data/2.5/weather?",
+    "cityname":"delhi",
+    "units" :"metric"
+  },
+  
+  "ui":{
+    "url" :"https://www.accuweather.com/",
+    "cityname":"Delhi"
+  },
+  "variance":{
+    "range_start":0,
+    "range_end":4
+  }
+  
 }
