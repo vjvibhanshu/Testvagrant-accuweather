@@ -21,6 +21,10 @@ class HomePageActions{
         return HomePageEl.temprature();
     }
 
+    loggingTemprature(src, val){
+        cy.log("Temprature from "+src+" is "+val);
+    }
+
 }
 /**
  * Instance of the HomePage class which is used to execute the request on UI

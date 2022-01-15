@@ -17,6 +17,8 @@ describe("Test suit for Variance",()=>{
             webPage.nevigateAndSearchForCity(testData.ui.cityname);
             webPage.getTemprature().then( $el =>{
                 let uiTemp =Number.parseFloat($el.text());
+                webPage.loggingTemprature("API",apiTemp);
+                webPage.loggingTemprature("UI",uiTemp);
                 expect(Math.abs(apiTemp-uiTemp)).to.be.within(testData.variance.range_start,testData.variance.range_end)
             });
         })

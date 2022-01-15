@@ -6,9 +6,9 @@
   "scripts": {
     "rmdir": "node -e \"var fs = require('fs'); process.argv.slice(1).map((fpath) => fs.rmdirSync(fpath, { recursive: true })); process.exit(0);\"",
     "removeOld": "npm run rmdir allure-report allure-results",
-    "test": "npm run removeOld && ./node_modules/.bin/cypress run --spec ./cypress/integration/Testcases/v*.spec.js --env allure=true,allureResultsPath=allure-results",
-    "test_headed_chrome": "npm run removeOld && ./node_modules/.bin/cypress run --spec ./cypress/integration/Testcases/v* --browser chrome --headed --env allure=true --reporter mocha-allure-reporter",
-    "test_headed_firefox": "./node_modules/.bin/cypress run --spec ./cypress/integration/Testcases/v* --browser firefox --headed --env allure=true --reporter mocha-allure-reporter",
+    "test": "npm run removeOld && ./node_modules/.bin/cypress run --spec ./cypress/integration/Testcases/*.spec.js --env allure=true,allureResultsPath=allure-results",
+    "test_chrome_headed": "npm run removeOld && ./node_modules/.bin/cypress run --spec ./cypress/integration/Testcases/*.spec.js --browser chrome --headed --env allure=true,allureResultsPath=allure-results",
+    "test_firefox_headed": "npm run removeOld && ./node_modules/.bin/cypress run --spec ./cypress/integration/Testcases/*.spec.js --browser firefox --headed --env allure=true,allureResultsPath=allure-results",
     "openReports": "allure generate allure-results --clean -o allure-report && allure open allure-report"
   },
   "author": "Vibhanshu Jain",

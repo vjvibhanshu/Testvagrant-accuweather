@@ -13,9 +13,12 @@ describe("Test suit for Comparator",()=>{
     it("Comparator testcase",()=>{
         apiRequest.fetchResponse().then(resp => {
             let apiTemp = Number.parseFloat(JSON.stringify(resp.body.main.temp));
+            webPage.loggingTemprature("API",apiTemp);
             webPage.nevigateAndSearchForCity(testData.ui.cityname);
             webPage.getTemprature().then( $el =>{
                 let uiTemp =Number.parseFloat($el.text());
+                webPage.loggingTemprature("API",apiTemp);
+                webPage.loggingTemprature("UI",uiTemp);
                 expect(apiTemp).to.eq(uiTemp);
             });
         })
