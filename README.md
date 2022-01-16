@@ -19,6 +19,7 @@ This project have two test cases one is `Comparator` and other one is `Variance`
 
 * Copy the repo to your local machine
 * Execute command  `npm install` to install the cypress and other project dependecies
+* Check or update `testData.json` file before running the testcases on path `./cypress/fixtures`
 * Execute command `npm run test` to run the test cases in headless mode
   Chrome and Firefox browsers can be run for headed mode with commands `npm run test_chrome_headed` and  `npm run test_firefox_headed` repectively
 
